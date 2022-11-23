@@ -2,13 +2,17 @@
 const {By} = require('selenium-webdriver')
 
 const deleteMovie = async (driver) => {
-    await driver.findElement(By.xpath('//button[@id="Avatar"]')).click()
+    await driver.findElement(By.xpath('(//button)[2]')).click()
 
-    // let deletedMovie = await driver.findElement(By.xpath('//aside[@class=hide]'))
+    //await driver.findElement(By.xpath('(//button)[2]')).click();
 
-    // const displayed = deletedMovie.toBeDisplayed()
+    //const displayed = await driver.findElement(By.xpath('//ul[contains(text(), "")]'))
 
-    // expect(displayed).ToBeTruthy()
+    //expect(displayed).ToBeTruthy()
+
+    const ul = await driver.findElement(By.xpath('//ul'))
+
+    expect(ul.hasChildren).toBeFalsy()
 
 }
 
